@@ -7,6 +7,7 @@ using AndroidX.AppCompat.Widget;
 using AndroidX.AppCompat.App;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
+using Android.Widget;
 
 namespace sleepApp
 {
@@ -21,24 +22,39 @@ namespace sleepApp
 
             string result = getTimeToWakeUp("07", "00", "AM");
 
-            System.Diagnostics.Debug.WriteLine(result);
+            Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
 
         }
 
         // Gets the time to wake up
         private string getTimeToWakeUp(string hourString, string minuteString, string amOrPmString) {
 
+            // Initializes necessary variables
             int hourInt = Int16.Parse(hourString);
             int minuteInt = Int16.Parse(minuteString);
 
             Time time = new Time(hourInt, minuteInt, amOrPmString.ToUpper());
 
-            for(int i = 0; i < 5; i++) {
-                time = remove30FromMinutes(time);
-                time = remove1FromHours(time);
+            // Loops for the specified amount of times
+            for(int i = 0; i < 8; i++) {
+                time.minutes = remove30FromMinutes(time).minutes;
+                time.hour = remove1FromHours(time).hour;
             }
 
-            string timeString = string.Format("{0}:{1} {2}", time.hour, time.minutes, time.amOrPm);
+            // Converts the hourInt and minuteInt to a String
+            hourString = hourInt.ToString();
+            minuteString = minuteInt.ToString();
+
+            // Adds an extra 0 to the hourString and minuteString if needed
+            if(hourString.Length == 0) {
+                hourString = "0" + hourString;
+            }
+
+            if (minuteString.Length == 0) {
+                minuteString = "0" + minuteString;
+            }
+
+            string timeString = string.Format("{0}:{1} {2}", hourString, minuteString, time.amOrPm);
 
             return timeString;
 
@@ -73,6 +89,7 @@ namespace sleepApp
             // Checks if the minutes are negative
             if(time.minutes < 0) {
                 time.minutes = makeMinutesPositive(time).minutes;
+                time.hour = remove1FromHours(time).hour;
             }
 
             return time;
@@ -105,7 +122,7 @@ namespace sleepApp
         private Time makeHoursPositive(Time time) {
 
             // Subtracts the positive version of time.hour from 12
-            time.hour = 60 - (time.hour * -1);
+            time.hour = 12 - (time.hour * -1);
 
             // Swaps the AM and PM sign since it went past the AM or PM when it became negative
             time.amOrPm = swapAMandPM(time).amOrPm;
@@ -117,7 +134,7 @@ namespace sleepApp
 
         private Time swapAMandPM(Time time) {
             // Swaps the am or the pm
-            if(time.amOrPm.ToLower() == "am") {
+            if(time.amOrPm == "AM") {
                 time.amOrPm = "PM";
             } else {
                 time.amOrPm = "AM";
