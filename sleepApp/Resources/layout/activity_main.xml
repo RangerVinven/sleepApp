@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:background="#7FDBFF"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,12 +15,26 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/relativeLayout1">
+        android:id="@+id/relativeLayout1"
+        >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200px"
+            android:text="01:30 PM 01:30 PM 01:30 PM"
+            android:textSize="35dp"
+            android:layout_marginTop="20px"
+            android:textAlignment="center"
+            android:layout_marginBottom="30px"
+            android:id="@+id/times"
+            android:textColor="#ffb6c1"
+            />
+            
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="220px"
             android:textAlignment="center"
             android:text="I need to wake up at:"
             android:id="@+id/wakeUpTextView"
@@ -58,9 +73,15 @@
         
         </TableRow>
 
-        
+        <Button
+            android:layout_below="@id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toWakeUpCalBtn"
+            android:text="Calculate"
+            android:layout_marginTop="20px"
+            android:layout_centerHorizontal="true"/>
+                
     </RelativeLayout>
-
-    
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
