@@ -18,6 +18,11 @@ namespace sleepApp
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
+
+            string result = getTimeToWakeUp("07", "00", "AM");
+
+            System.Diagnostics.Debug.WriteLine(result);
+
         }
 
         // Gets the time to wake up
@@ -26,93 +31,99 @@ namespace sleepApp
             int hourInt = Int16.Parse(hourString);
             int minuteInt = Int16.Parse(minuteString);
 
-            
+            Time time = new Time(hourInt, minuteInt, amOrPmString.ToUpper());
+
+            for(int i = 0; i < 5; i++) {
+                time = remove30FromMinutes(time);
+                time = remove1FromHours(time);
+            }
+
+            string timeString = string.Format("{0}:{1} {2}", time.hour, time.minutes, time.amOrPm);
+
+            return timeString;
 
         }
 
-        #region Functions that takes 1 from the hoursInt and 30 from the minutesInt
+        #region Functions that takes 1 from the time.hour and 30 from the time.minutes
 
-        private int remove30FromMinutes(int minutesInt) {
+        private Time remove30FromMinutes(Time time) {
             
-            // Removes 30 from the minutesInt and makes it positive
-            minutesInt = minutesInt - 30;
-            minutesInt = checkIfMinutesIsNegative(minutesInt);
+            // Removes 30 from the time.minutes and makes it positive
+            time.minutes = time.minutes - 30;
+            time.minutes = checkIfMinutesIsNegative(time).minutes;
 
-            return minutesInt;
+            return time;
         }
 
-        private int remove1FromHours(int hoursInt) {
+        private Time remove1FromHours(Time time) {
 
-            // Removes 1 from the hoursInt and makes it positive
-            hoursInt = hoursInt - 1;
-            hoursInt = checkIfHoursIsNegative(hoursInt);
+            // Removes 1 from the time.hour and makes it positive
+            time.hour = time.hour - 1;
+            time.hour = checkIfHoursIsNegative(time).hour;
 
-            return hoursInt;
+            return time;
         }
 
         #endregion
 
         #region Functions that check if the hours and minutes are negative
 
-        private int checkIfMinutesIsNegative(int minutesInt) {
+        private Time checkIfMinutesIsNegative(Time time) {
 
             // Checks if the minutes are negative
-            if(minutesInt < 0) {
-                minutesInt = makeMinutesPositive(minutesInt);
+            if(time.minutes < 0) {
+                time.minutes = makeMinutesPositive(time).minutes;
             }
 
-            return minutesInt;
+            return time;
         }
 
-        private int checkIfHoursIsNegative(int hoursInt, string amOrPmString) {
+        private Time checkIfHoursIsNegative(Time time) {
 
             // Checks if the hours are negative
-            if (hoursInt < 0) {
+            if (time.hour < 0) {
 
                 // Makes the hours positive and makes the amOrPm the other one (am becomes pm and vise versa)
-                hoursInt = makeHoursPositive(hoursInt);
-                amOrPmString = swapAMandPM(amOrPmString);
-
-                // Tuple so it returns the hours and the am or pm
-
+                time.hour = makeHoursPositive(time).hour;
             }
 
-            return hoursInt;
+            return time;
         }
 
         #endregion
 
         #region Functions that makes the minutes and hours positive
 
-        private int makeMinutesPositive(int minutesInt) {
+        private Time makeMinutesPositive(Time time) {
 
-            // Subtracts the positive version of minutesInt from 60
-            minutesInt = 60 - (minutesInt * -1);
+            // Subtracts the positive version of time.minutes from 60
+            time.minutes = 60 - (time.minutes * -1);
 
-            return minutesInt;
+            return time;
         }
 
-        private int makeHoursPositive(int hoursInt) {
+        private Time makeHoursPositive(Time time) {
 
-            // Subtracts the positive version of hoursInt from 12
-            hoursInt = 60 - (hoursInt * -1);
+            // Subtracts the positive version of time.hour from 12
+            time.hour = 60 - (time.hour * -1);
 
             // Swaps the AM and PM sign since it went past the AM or PM when it became negative
+            time.amOrPm = swapAMandPM(time).amOrPm;
 
-            return hoursInt;
+            return time;
         }
 
         #endregion
 
-        private string swapAMandPM(string amOrPmString) {
+        private Time swapAMandPM(Time time) {
             // Swaps the am or the pm
-            if(amOrPmString.ToLower() == "am") {
-                amOrPmString = "PM"
+            if(time.amOrPm.ToLower() == "am") {
+                time.amOrPm = "PM";
             } else {
-                amOrPmString = "AM";
+                time.amOrPm = "AM";
             }
 
-            return amOrPmString;
+            return time;
         }
 
     }
