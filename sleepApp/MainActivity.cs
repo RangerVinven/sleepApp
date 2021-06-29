@@ -1,12 +1,7 @@
 ﻿using System;
 using Android.App;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using AndroidX.AppCompat.Widget;
 using AndroidX.AppCompat.App;
-using Google.Android.Material.FloatingActionButton;
-using Google.Android.Material.Snackbar;
 using Android.Widget;
 
 namespace sleepApp
@@ -20,10 +15,27 @@ namespace sleepApp
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            string result = getTimeToWakeUp("07", "00", "AM");
+            //string result = getTimeToWakeUp("07", "00", "AM");
+            //Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
 
-            Toast.MakeText(Application.Context, result, ToastLength.Short).Show();
+            // Gets the calculate button element
+            Button calculateBtn = FindViewById<Button>(Resource.Id.toWakeUpCalBtn);
 
+            calculateBtn.Click += calculateBtnClick;
+
+        }
+
+        private void calculateBtnClick(object sender, EventArgs e) {
+            // Gets the text view element
+            TextView timeTextView = FindViewById<TextView>(Resource.Id.times);
+
+            // Gets the hour, minutes and AM or PM
+            string hour = FindViewById<Spinner>(Resource.Id.hourSpinner).SelectedItem.ToString();
+            string minute = FindViewById<Spinner>(Resource.Id.minutesSpinner).SelectedItem.ToString();
+            string amOrPm = FindViewById<Spinner>(Resource.Id.amOrPmSpinner).SelectedItem.ToString();            
+
+            // Replaces the timeTextView to the time calculated
+            timeTextView.Text = getTimeToWakeUp(hour, minute, amOrPm);
         }
 
         // Gets the time to wake up
@@ -46,16 +58,15 @@ namespace sleepApp
             minuteString = minuteInt.ToString();
 
             // Adds an extra 0 to the hourString and minuteString if needed
-            if(hourString.Length == 0) {
-                hourString = "0" + hourString;
+            if(hourString.Length == 1) {
+                hourString = string.Concat("0", hourString);
             }
 
-            if (minuteString.Length == 0) {
-                minuteString = "0" + minuteString;
+            if (minuteString.Length == 1) {
+                minuteString = string.Concat("0", minuteString);
             }
 
-            string timeString = string.Format("{0}:{1} {2}", hourString, minuteString, time.amOrPm);
-
+            string timeString = string.Concat(hourString, ":", minuteString, " ", time.amOrPm);
             return timeString;
 
         }
