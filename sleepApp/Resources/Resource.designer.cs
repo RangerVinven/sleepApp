@@ -4066,79 +4066,103 @@ namespace sleepApp
 			public const int time = 2131296475;
 			
 			// aapt resource value: 0x7F0900DC
-			public const int times = 2131296476;
+			public const int time1 = 2131296476;
 			
 			// aapt resource value: 0x7F0900DD
-			public const int title = 2131296477;
+			public const int time2 = 2131296477;
 			
 			// aapt resource value: 0x7F0900DE
-			public const int titleDividerNoCustom = 2131296478;
+			public const int time3 = 2131296478;
 			
 			// aapt resource value: 0x7F0900DF
-			public const int title_template = 2131296479;
-			
-			// aapt resource value: 0x7F0900E1
-			public const int top = 2131296481;
-			
-			// aapt resource value: 0x7F0900E2
-			public const int topPanel = 2131296482;
-			
-			// aapt resource value: 0x7F0900E3
-			public const int touch_outside = 2131296483;
+			public const int time4 = 2131296479;
 			
 			// aapt resource value: 0x7F0900E0
-			public const int toWakeUpCalBtn = 2131296480;
+			public const int time5 = 2131296480;
+			
+			// aapt resource value: 0x7F0900E1
+			public const int time6 = 2131296481;
+			
+			// aapt resource value: 0x7F0900E2
+			public const int times1And2 = 2131296482;
+			
+			// aapt resource value: 0x7F0900E3
+			public const int times3And4 = 2131296483;
 			
 			// aapt resource value: 0x7F0900E4
-			public const int transition_current_scene = 2131296484;
+			public const int times5And6 = 2131296484;
 			
 			// aapt resource value: 0x7F0900E5
-			public const int transition_layout_save = 2131296485;
+			public const int title = 2131296485;
 			
 			// aapt resource value: 0x7F0900E6
-			public const int transition_position = 2131296486;
+			public const int titleDividerNoCustom = 2131296486;
 			
 			// aapt resource value: 0x7F0900E7
-			public const int transition_scene_layoutid_cache = 2131296487;
-			
-			// aapt resource value: 0x7F0900E8
-			public const int transition_transform = 2131296488;
+			public const int title_template = 2131296487;
 			
 			// aapt resource value: 0x7F0900E9
-			public const int @unchecked = 2131296489;
+			public const int top = 2131296489;
 			
 			// aapt resource value: 0x7F0900EA
-			public const int uniform = 2131296490;
+			public const int topPanel = 2131296490;
 			
 			// aapt resource value: 0x7F0900EB
-			public const int unlabeled = 2131296491;
+			public const int touch_outside = 2131296491;
+			
+			// aapt resource value: 0x7F0900E8
+			public const int toWakeUpCalBtn = 2131296488;
 			
 			// aapt resource value: 0x7F0900EC
-			public const int up = 2131296492;
+			public const int transition_current_scene = 2131296492;
 			
 			// aapt resource value: 0x7F0900ED
-			public const int useLogo = 2131296493;
+			public const int transition_layout_save = 2131296493;
 			
 			// aapt resource value: 0x7F0900EE
-			public const int view_offset_helper = 2131296494;
+			public const int transition_position = 2131296494;
 			
 			// aapt resource value: 0x7F0900EF
-			public const int view_tree_saved_state_registry_owner = 2131296495;
+			public const int transition_scene_layoutid_cache = 2131296495;
 			
 			// aapt resource value: 0x7F0900F0
-			public const int visible = 2131296496;
+			public const int transition_transform = 2131296496;
 			
 			// aapt resource value: 0x7F0900F1
-			public const int visible_removing_fragment_view_tag = 2131296497;
+			public const int @unchecked = 2131296497;
 			
 			// aapt resource value: 0x7F0900F2
-			public const int wakeUpTextView = 2131296498;
+			public const int uniform = 2131296498;
 			
 			// aapt resource value: 0x7F0900F3
-			public const int withText = 2131296499;
+			public const int unlabeled = 2131296499;
 			
 			// aapt resource value: 0x7F0900F4
-			public const int wrap_content = 2131296500;
+			public const int up = 2131296500;
+			
+			// aapt resource value: 0x7F0900F5
+			public const int useLogo = 2131296501;
+			
+			// aapt resource value: 0x7F0900F6
+			public const int view_offset_helper = 2131296502;
+			
+			// aapt resource value: 0x7F0900F7
+			public const int view_tree_saved_state_registry_owner = 2131296503;
+			
+			// aapt resource value: 0x7F0900F8
+			public const int visible = 2131296504;
+			
+			// aapt resource value: 0x7F0900F9
+			public const int visible_removing_fragment_view_tag = 2131296505;
+			
+			// aapt resource value: 0x7F0900FA
+			public const int wakeUpTextView = 2131296506;
+			
+			// aapt resource value: 0x7F0900FB
+			public const int withText = 2131296507;
+			
+			// aapt resource value: 0x7F0900FC
+			public const int wrap_content = 2131296508;
 			
 			static Id()
 			{

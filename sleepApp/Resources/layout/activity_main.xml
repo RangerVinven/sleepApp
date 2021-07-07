@@ -18,17 +18,83 @@
         android:id="@+id/relativeLayout1"
         >
 
-        <TextView
-            android:layout_width="match_parent"
+        <TableRow
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35dp"
-            android:layout_marginTop="20px"
-            android:textAlignment="center"
-            android:layout_marginBottom="30px"
-            android:id="@+id/times"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/times1And2"
+            android:layout_marginTop="10px">
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time1"
+            android:layout_marginRight="50px"
+            android:text="Time1"
             android:textColor="#ffb6c1"
-            />
-            
+            android:textSize="35dp"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time2"
+            android:id="@+id/time2"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/times3And4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/times1And2">
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time3"
+            android:id="@+id/time3"
+            android:layout_marginRight="50px"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time4"
+            android:id="@+id/time4"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/times5And6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/times3And4">
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time5"
+            android:id="@+id/time5"
+            android:layout_marginRight="50px"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time6"
+            android:id="@+id/time6"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+        </TableRow>
 
         <TextView
             android:layout_width="match_parent"
@@ -37,17 +103,17 @@
             android:textAlignment="center"
             android:text="I need to wake up at:"
             android:id="@+id/wakeUpTextView"
+            android:layout_above="@id/tableRow1"
             />
 
         <TableRow
-            android:layout_below="@id/wakeUpTextView"
+            android:layout_above="@id/toWakeUpCalBtn"
             android:layout_marginTop="25px"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            
             android:id="@+id/tableRow1">
 
             <Spinner
@@ -73,14 +139,16 @@
         </TableRow>
 
         <Button
-            android:layout_below="@id/tableRow1"
+            
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/toWakeUpCalBtn"
             android:text="Calculate"
             android:layout_marginTop="20px"
-            android:layout_centerHorizontal="true"/>
-                
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="35dp"/>
+        
     </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
