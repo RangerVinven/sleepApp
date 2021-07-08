@@ -142,6 +142,99 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="35dp"/>
         
+        <TableRow
+            android:layout_below="@id/toWakeUpCalBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/times1And2GoToBedNow"
+            android:layout_marginTop="10px">
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time1GoToBedNow"
+            android:layout_marginRight="50px"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time2GoToBedNow"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/times3And4GoToBedNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/times1And2GoToBedNow">
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time3GoToBedNow"
+            android:layout_marginRight="50px"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time4GoToBedNow"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/times5And6GoToBedNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/times3And4GoToBedNow">
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time5GoToBedNow"
+            android:layout_marginRight="50px"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time6GoToBedNow"
+            android:textColor="#ffb6c1"
+            android:textSize="35dp"/>
+
+        </TableRow>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
+            android:textAlignment="center"
+            android:text="If I go to bed now:"
+            android:id="@+id/goToBedNowTextView"
+            android:layout_below="@id/times5And6GoToBedNow"
+            />
+            
+        <Button
+            android:layout_below="@id/goToBedNowTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/goToBedNowBtn"
+            android:text="Calculate"
+            android:layout_marginTop="20px"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"/>
+
     </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
