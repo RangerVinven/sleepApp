@@ -166,9 +166,11 @@ namespace sleepApp
             Int16 hour = Int16.Parse(DateTime.Now.ToString("hh"));
             time.hour = hour;
 
-            // Gets the current minute
+            // Gets the current minute (and adds 14 minutes as it takes that long (on average) to fall asleep)
             Int16 minute = Int16.Parse(DateTime.Now.ToString("mm"));
-            time.minutes = minute;
+            time.minutes = minute + 14;
+
+            time.minutes = checkIfMinutesAreAbove60(time).minutes;
 
             // Gets the AM or PM
             string amOrPm = DateTime.Now.ToString("tt");
