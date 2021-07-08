@@ -30,14 +30,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/time1"
             android:layout_marginRight="50px"
-            android:text="Time1"
             android:textColor="#ffb6c1"
             android:textSize="35dp"/>
 
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time2"
             android:id="@+id/time2"
             android:textColor="#ffb6c1"
             android:textSize="35dp"/>
@@ -54,7 +52,6 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time3"
             android:id="@+id/time3"
             android:layout_marginRight="50px"
             android:textColor="#ffb6c1"
@@ -63,7 +60,6 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time4"
             android:id="@+id/time4"
             android:textColor="#ffb6c1"
             android:textSize="35dp"/>
@@ -80,7 +76,6 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time5"
             android:id="@+id/time5"
             android:layout_marginRight="50px"
             android:textColor="#ffb6c1"
@@ -89,7 +84,6 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time6"
             android:id="@+id/time6"
             android:textColor="#ffb6c1"
             android:textSize="35dp"/>
@@ -99,15 +93,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="220px"
+            android:layout_marginTop="30px"
             android:textAlignment="center"
             android:text="I need to wake up at:"
             android:id="@+id/wakeUpTextView"
-            android:layout_above="@id/tableRow1"
+            android:layout_below="@id/times5And6"
             />
 
         <TableRow
-            android:layout_above="@id/toWakeUpCalBtn"
+            android:layout_below="@id/wakeUpTextView"
             android:layout_marginTop="25px"
             android:minWidth="25px"
             android:minHeight="25px"
@@ -139,14 +133,13 @@
         </TableRow>
 
         <Button
-            
+            android:layout_below="@id/tableRow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/toWakeUpCalBtn"
             android:text="Calculate"
             android:layout_marginTop="20px"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginBottom="35dp"/>
         
     </RelativeLayout>
