@@ -23,6 +23,7 @@ namespace sleepApp
             Button calculateBtn = FindViewById<Button>(Resource.Id.toWakeUpCalBtn);
             calculateBtn.Click += calculateBtnClick;
 
+            // Gets the calculate button for going to bed now and sets an onclick
             Button goToBedNowBtn = FindViewById<Button>(Resource.Id.goToBedNowBtn);
             goToBedNowBtn.Click += goToBedNowBtnClick;
 
@@ -41,6 +42,12 @@ namespace sleepApp
             string hour = FindViewById<Spinner>(Resource.Id.hourSpinner).SelectedItem.ToString();
             string minute = FindViewById<Spinner>(Resource.Id.minutesSpinner).SelectedItem.ToString();
             string amOrPm = FindViewById<Spinner>(Resource.Id.amOrPmSpinner).SelectedItem.ToString();
+
+            // Makes sure the user has selected an hour, minute (AM or PM is already selected)
+            if((hour == "Hour") || (minute == "Minute")) {
+                Toast.MakeText(Application.Context, "Please enter a valid hour and minute", ToastLength.Short).Show();
+                return;
+            }
 
             // Toast.MakeText(Application.Context, hour, ToastLength.Short).Show();
 
